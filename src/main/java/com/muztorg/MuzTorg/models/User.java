@@ -8,6 +8,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Entity
 @Table
 @Data
@@ -32,6 +34,12 @@ public class User {
     @Column
     @NotEmpty
     private String password;
+    @Column
+    @Enumerated(EnumType.STRING)
+    private Role role;
+    @Column(name = "created_at")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
     @Column
     private boolean enabled;
     @Column
