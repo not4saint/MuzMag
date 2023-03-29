@@ -1,13 +1,13 @@
 package com.muztorg.MuzTorg.controllers;
 
-import com.muztorg.MuzTorg.dto.UserDTO;
+import com.muztorg.MuzTorg.dto.UserInfoDTO;
+import com.muztorg.MuzTorg.dto.UserUpdateInfoDTO;
 import com.muztorg.MuzTorg.services.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -15,7 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class UsersController {
     private final UserService userService;
     @GetMapping("/user-info")
-    public UserDTO getUserInfo() {
+    public UserInfoDTO getUserInfo() {
         return userService.findUserByEmail();
+    }
+
+    @PostMapping("/user-info/update")
+    public ResponseEntity<HttpStatus> updateUserInfo(@RequestBody UserUpdateInfoDTO userUpdateInfoDTO,
+                                                     BindingResult bindingResult) {
+        /// TODO: 29.03.2023 добавить проверку на мыло
+        userService.updateUserInformation(userUpdateInfoDTO);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 }

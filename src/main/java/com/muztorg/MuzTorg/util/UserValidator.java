@@ -1,6 +1,6 @@
 package com.muztorg.MuzTorg.util;
 
-import com.muztorg.MuzTorg.models.User;
+import com.muztorg.MuzTorg.models.user.User;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
