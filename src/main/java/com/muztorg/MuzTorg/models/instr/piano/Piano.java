@@ -51,4 +51,7 @@ public class Piano extends Instrument {
     @Column
     @Pattern(regexp = "\\d+\\sx\\s\\d+\\sx\\s\\d++")
     private String size;
+    @Column
+    @NotEmpty
+    private boolean inStock;
 }

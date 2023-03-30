@@ -48,4 +48,7 @@ public class Guitar extends Instrument {
     @Column
     @Pattern(regexp = "\\d+\\sx\\s\\d++")
     private String scale;
+    @Column
+    @NotEmpty
+    private boolean inStock;
 }
