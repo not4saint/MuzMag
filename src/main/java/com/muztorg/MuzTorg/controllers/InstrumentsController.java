@@ -1,15 +1,22 @@
 package com.muztorg.MuzTorg.controllers;
 
+import com.muztorg.MuzTorg.models.instr.Instrument;
+import com.muztorg.MuzTorg.services.InstrumentService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/muztorg")
+@RequestMapping("/muztorg/catalog")
+@RequiredArgsConstructor
 public class InstrumentsController {
+    private final InstrumentService instrumentService;
     @GetMapping("/${instr}")
-    public List<InstrumentDTO> getAllInstruments(@PathVariable(name = "instr") String instr) {
-        /// TODO: 28.03.2023 method return list of all instruments in current category
+    public List<? extends Instrument> getAllInstruments(@PathVariable(name = "instr") String nameInstr) {
+        return instrumentService.findAllInstrumentsInCurrentCategory(nameInstr);
     }
 }
