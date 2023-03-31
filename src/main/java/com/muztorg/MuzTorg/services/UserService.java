@@ -56,8 +56,8 @@ public class UserService {
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
         return userDetails.getUser();
     }
-    public Optional<User> checkUniqueByEmail() {
-        /// TODO: 28.03.2023 для регистрации получаем информацию о зарегестрированном мыле
+    public Optional<User> checkUniqueByEmailDuringRegistration(String email) {
+        return usersRepository.findByEmail(email);
     }
 
     private UserInfoDTO convertUserToUserDTO(User user) {
