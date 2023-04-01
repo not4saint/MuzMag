@@ -35,6 +35,9 @@ public class User {
     @NotEmpty
     private String password;
     @Column
+    @NotEmpty
+    private String address;
+    @Column
     @Enumerated(EnumType.STRING)
     private Role role;
     @Column(name = "created_at")

@@ -28,6 +28,6 @@ public class InstrumentsController {
     @PostMapping("/${instr}/${id}")
     public ResponseEntity<HttpStatus> addInstrumentInShoppingCart(@PathVariable(name = "instr") String nameInstr,
                                                                   @PathVariable("id") int id) {
-        // TODO: 02.04.2023  
+        // TODO: 02.04.2023 добавление в корзину 
     }
 }
