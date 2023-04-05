@@ -1,7 +1,7 @@
 package com.muztorg.MuzTorg.util;
 
 import com.muztorg.MuzTorg.models.user.User;
-import com.muztorg.MuzTorg.services.UserService;
+import com.muztorg.MuzTorg.services.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -12,7 +12,7 @@ import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 public class UserValidator implements Validator {
-    private final UserService userService;
+    private final UserServiceImpl userService;
     @Override
     public boolean supports(Class<?> clazz) {
         return User.class.equals(clazz);

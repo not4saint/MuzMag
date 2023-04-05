@@ -2,7 +2,6 @@ package com.muztorg.MuzTorg.controllers;
 
 import com.muztorg.MuzTorg.models.instr.Instrument;
 import com.muztorg.MuzTorg.services.InstrumentService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -4,6 +4,7 @@ import com.muztorg.MuzTorg.dto.UserInfoDTO;
 import com.muztorg.MuzTorg.dto.UserUpdateInfoDTO;
 import com.muztorg.MuzTorg.security.exceptions.EmailAlreadyRegisteredException;
 import com.muztorg.MuzTorg.services.UserService;
+import com.muztorg.MuzTorg.services.UserServiceImpl;
 import com.muztorg.MuzTorg.util.UserValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
