@@ -34,4 +34,7 @@ public class ShoppingCart {
     @Column
     @Min(1)
     private int amount;
+    @Column
+    @NotEmpty
+    private int cost;
 }

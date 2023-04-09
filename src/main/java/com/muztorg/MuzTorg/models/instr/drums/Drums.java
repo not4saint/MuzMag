@@ -40,4 +40,7 @@ public class Drums extends Instrument {
     @Column
     @NotEmpty
     private boolean inStock;
+    @Column
+    @NotEmpty
+    private int cost;
 }

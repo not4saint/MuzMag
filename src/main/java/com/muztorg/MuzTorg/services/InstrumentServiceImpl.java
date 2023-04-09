@@ -78,6 +78,7 @@ public class InstrumentServiceImpl implements InstrumentService, AuthenticationS
                     .instrumentId(instrumentRequestDTO.getInstrumentId())
                     .instrumentType(instrumentRequestDTO.getInstrumentType())
                     .amount(instrumentRequestDTO.getAmount())
+                    .cost(instrumentRequestDTO.getCost())
                     .build();
         }
         shoppingCartsRepository.save(shoppingCart);
