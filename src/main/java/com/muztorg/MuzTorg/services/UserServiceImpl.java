@@ -1,7 +1,7 @@
 package com.muztorg.MuzTorg.services;
 
-import com.muztorg.MuzTorg.dto.UserInfoDTO;
-import com.muztorg.MuzTorg.dto.UserUpdateInfoDTO;
+import com.muztorg.MuzTorg.dto.users.UserInfoDTO;
+import com.muztorg.MuzTorg.dto.users.UserUpdateInfoDTO;
 import com.muztorg.MuzTorg.models.user.User;
 import com.muztorg.MuzTorg.repositories.UsersRepository;
 import com.muztorg.MuzTorg.security.UserDetails;
@@ -18,7 +18,7 @@ import java.util.Optional;
 @Service
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, AuthenticationService {
     private final UsersRepository usersRepository;
     private final ModelMapper modelMapper;
 
@@ -49,12 +49,6 @@ public class UserServiceImpl implements UserService {
         if (userUpdateInfoDTO.getPassword() != null)
             user.setPassword(userUpdateInfoDTO.getPassword());
         usersRepository.save(user);
-    }
-
-    private User getUserAfterAuthenticationInCurrentSession() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        return userDetails.getUser();
     }
     public Optional<User> checkUniqueByEmailDuringRegistration(String email) {
         return usersRepository.findByEmail(email);

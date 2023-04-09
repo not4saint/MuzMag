@@ -1,6 +1,5 @@
-package com.muztorg.MuzTorg.dto;
+package com.muztorg.MuzTorg.dto.users;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
@@ -8,12 +7,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserUpdateInfoDTO {
+public class UserInfoDTO {
+    @NotEmpty
     private String firstname;
+    @NotEmpty
     private String lastname;
+    @NotEmpty
     @Email
     private String email;
-    private String password;
-    @NotEmpty
-    private String address;
 }

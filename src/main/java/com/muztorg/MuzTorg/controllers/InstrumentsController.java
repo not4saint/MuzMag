@@ -1,5 +1,6 @@
 package com.muztorg.MuzTorg.controllers;
 
+import com.muztorg.MuzTorg.dto.instruments.InstrumentRequestDTO;
 import com.muztorg.MuzTorg.models.instr.Instrument;
 import com.muztorg.MuzTorg.services.InstrumentService;
 import lombok.RequiredArgsConstructor;
@@ -24,9 +25,9 @@ public class InstrumentsController {
         return instrumentService.findInstrumentInCurrentCategoryById(nameInstr, id);
     }
 
-    @PostMapping("/${instr}/${id}")
-    public ResponseEntity<HttpStatus> addInstrumentInShoppingCart(@PathVariable(name = "instr") String nameInstr,
-                                                                  @PathVariable("id") int id) {
-        // TODO: 02.04.2023 добавление в корзину 
+    @PostMapping("/${instr}/${id}/add")
+    public ResponseEntity<HttpStatus> addInstrumentInShoppingCart(@RequestBody InstrumentRequestDTO instrumentRequestDTO) {
+        instrumentService.addInstrument(instrumentRequestDTO);
+        return ResponseEntity.ok(HttpStatus.OK);
     }
 }
