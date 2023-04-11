@@ -2,7 +2,7 @@ package com.muztorg.MuzTorg.controllers;
 
 import com.muztorg.MuzTorg.dto.instruments.InstrumentRequestDTO;
 import com.muztorg.MuzTorg.models.instr.Instrument;
-import com.muztorg.MuzTorg.services.InstrumentService;
+import com.muztorg.MuzTorg.services.interfaces.InstrumentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/muztorg/catalog")
+@RequestMapping("/muzmag/catalog")
 @RequiredArgsConstructor
 public class InstrumentsController {
     private final InstrumentService instrumentService;

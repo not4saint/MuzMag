@@ -1,15 +1,14 @@
-package com.muztorg.MuzTorg.services;
+package com.muztorg.MuzTorg.services.impls;
 
 import com.muztorg.MuzTorg.dto.users.UserInfoDTO;
 import com.muztorg.MuzTorg.dto.users.UserUpdateInfoDTO;
 import com.muztorg.MuzTorg.models.user.User;
 import com.muztorg.MuzTorg.repositories.UsersRepository;
-import com.muztorg.MuzTorg.security.UserDetails;
 import com.muztorg.MuzTorg.security.exceptions.EmptyUserInformationException;
+import com.muztorg.MuzTorg.services.interfaces.AuthenticationService;
+import com.muztorg.MuzTorg.services.interfaces.UserService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

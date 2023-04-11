@@ -1,7 +1,7 @@
 package com.muztorg.MuzTorg.util;
 
 import com.muztorg.MuzTorg.models.user.User;
-import com.muztorg.MuzTorg.services.UserServiceImpl;
+import com.muztorg.MuzTorg.services.impls.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

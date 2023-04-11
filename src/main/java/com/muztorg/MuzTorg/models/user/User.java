@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class User {
     @Id
     @Column
@@ -42,8 +44,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
     @Column(name = "created_at")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
+    @Temporal(TemporalType.DATE)
+    private LocalDateTime createdAt;
     @Column
     private boolean enabled;
     @Column

@@ -1,4 +1,4 @@
-package com.muztorg.MuzTorg.services;
+package com.muztorg.MuzTorg.services.interfaces;
 
 import com.muztorg.MuzTorg.dto.users.UserInfoDTO;
 import com.muztorg.MuzTorg.dto.users.UserUpdateInfoDTO;

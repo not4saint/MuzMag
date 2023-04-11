@@ -1,4 +1,4 @@
-package com.muztorg.MuzTorg.services;
+package com.muztorg.MuzTorg.services.impls;
 
 import com.muztorg.MuzTorg.dto.instruments.InstrumentRequestDTO;
 import com.muztorg.MuzTorg.models.instr.Instrument;
@@ -7,6 +7,8 @@ import com.muztorg.MuzTorg.models.user.User;
 import com.muztorg.MuzTorg.repositories.*;
 import com.muztorg.MuzTorg.security.exceptions.CurrentCategoryNotFoundException;
 import com.muztorg.MuzTorg.security.exceptions.InstrumentNotFoundException;
+import com.muztorg.MuzTorg.services.interfaces.AuthenticationService;
+import com.muztorg.MuzTorg.services.interfaces.InstrumentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

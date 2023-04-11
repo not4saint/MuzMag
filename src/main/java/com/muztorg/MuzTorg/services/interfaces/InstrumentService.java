@@ -1,4 +1,4 @@
-package com.muztorg.MuzTorg.services;
+package com.muztorg.MuzTorg.services.interfaces;
 
 import com.muztorg.MuzTorg.dto.instruments.InstrumentRequestDTO;
 import com.muztorg.MuzTorg.models.instr.Instrument;
